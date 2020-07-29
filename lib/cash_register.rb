@@ -22,7 +22,6 @@ class CashRegister
       @items << title
       counter -= 1 
     end
-    @items[title] = price
     @total += (price * quantity)
     @lastitem = (price * quantity)
   end
@@ -43,15 +42,9 @@ class CashRegister
   
   def void_last_transaction
 
-    @total -= @items[@lastitem]
-    @items.delete(@lastitem)
+    @total -= @lastitem
+    @items.pop
     @total = 0.0 if @items.empty?
-    @items.keys
   end
   
-  def void_last_transaction
-    total -= @@items.values.last 
-    @items.last.delete
-    @total = 0.0 if @@items.last == nil 
-  end
 end     #ends class 

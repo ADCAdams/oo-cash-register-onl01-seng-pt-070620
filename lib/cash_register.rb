@@ -32,13 +32,8 @@ class CashRegister
       return "There is no discount to apply."
     else
       otherDiscount = @discount.to_f
-
       @total = (@total * (1- (otherDiscount/100))).to_i
-    
       return "After the discount, the total comes to $#{@total}."
-      @total = (@total * (1- (otherDiscount/100)))
-    
-      return "success message"
     end
   end
   
